@@ -1,4 +1,4 @@
-package study.ch01;
+package ch01;
 
 import org.junit.jupiter.api.Test;
 

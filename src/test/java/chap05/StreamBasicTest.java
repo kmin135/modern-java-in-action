@@ -10,6 +10,18 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamBasicTest {
+
+    @Test
+    @DisplayName("중복없는 짝수 추출")
+    void evenNumbers() {
+        List<Integer> numbers = Arrays.asList(1, 2, 1, 3, 3, 2, 4);
+        List<Integer> collect = numbers.stream()
+                .filter(i -> i % 2 == 0)
+                .distinct()
+                .collect(Collectors.toList());
+
+        Assertions.assertThat(collect).containsExactlyInAnyOrder(2, 4);
+    }
     @Test
     @DisplayName("문자열 리스트에서 고유 문자 리스트 반환")
     void simpleFlat() {
